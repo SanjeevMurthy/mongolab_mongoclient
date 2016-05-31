@@ -10,7 +10,7 @@ module.exports=function(app,config){
 	});
 
 	app.get('/loaderio*',function(req,res){
-		res.sendFile(config.rootPath+"/loaderio-122c660bd2f360f9fd590e83bc7dc9a7.txt");
+		res.sendFile(config.rootPath+"/loaderio-c53750dc96eb85c8552b9e6b4b9fab8b.txt");
 	});
 
 	
