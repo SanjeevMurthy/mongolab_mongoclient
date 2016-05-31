@@ -28,8 +28,21 @@ module.exports=function(app,config){
 	});
 
 	app.get('/employee/:id',function(req,res){
-		console.log("/employee:id routes");
+		console.log("GET /employee:id routes");
 			employeeDAO.getEmployee(req,function(err,response){
+				if(err){
+					res.end(err);
+				}else{
+					res.status(200);
+					res.json(response);
+					res.end();
+				}
+			});
+	});
+
+	app.post('/employee/:id',function(req,res){
+		console.log("POST /employee:id routes");
+			employeeDAO.updateEmployee(req,function(err,response){
 				if(err){
 					res.end(err);
 				}else{
