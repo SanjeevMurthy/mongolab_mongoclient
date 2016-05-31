@@ -13,12 +13,11 @@ var app=express();
 
 
 
-require('./routes/routes.js')(app);
+require('./routes/routes.js')(app,config);
 
 db.connect(config.db, function(err) {
 	(err)?error(err):success(app);
 });
-
 
 function error(err){
 	console.log('Unable to connect to Mongo.');

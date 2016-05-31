@@ -2,11 +2,15 @@
 var employeeDAO=require('../business/employeeDAO.js');
 
 
-module.exports=function(app){
+module.exports=function(app,config){
 
 	
 	app.get('/',function (req,res) {
 		res.send('Welcome to MongoClient');
+	});
+
+	app.get('/loaderio*',function(req,res){
+		res.sendFile(config.rootPath+"/loaderio-122c660bd2f360f9fd590e83bc7dc9a7.txt");
 	});
 
 	
